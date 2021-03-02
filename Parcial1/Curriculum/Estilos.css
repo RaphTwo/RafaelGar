@@ -1,9 +1,8 @@
 body{
-    background-color:darkslategray
+    background-color:darkslategray;
+    color:azure;
+    font-size: medium;
 
 }
-
-h1{ color: azure;}
-h2{ color: azure;}
-h3{ color: azure;}
-h4{ color: azure;}
+img{size:"150";}
+fieldset{ border-radius: 20px;;}
