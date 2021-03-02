@@ -2,7 +2,13 @@ body{
     background-color:darkslategray;
     color:azure;
     font-size: medium;
+    align-items: center;
 
 }
 img{size:"150";}
-fieldset{ border-radius: 20px;;}
+fieldset{ border-radius: 20px;;
+width: auto;
+}
+a:any-link{color: skyblue;}
+a:hover{color: red;}
+img:target{size:"40";}
