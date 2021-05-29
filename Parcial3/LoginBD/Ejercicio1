@@ -1,0 +1,24 @@
+create database rafaelgar;
+
+use rafaelgar;
+
+
+create table usuarios
+(
+idUsuario smallint not null identity(1,1),
+  nombre    varchar(30),
+  apPaterno varchar(30),
+  apMaterno varchar(30),
+  login     varchar(10),
+  password  varchar(32),
+  PRIMARY KEY(idUsuario)
+
+)
+insert into usuarios(nombre,apPaterno,apMaterno,login,password)
+values ('Rafael','Garcia','Villanueva','Rafael','Garcia');
+
+insert into usuarios (nombre,apPaterno,apMaterno,login,password)
+values ('Adolfo','Perez','Gutierrez','Adolfo','Perez');   
+
+insert into usuarios (nombre,apPaterno,apMaterno,login,password)
+values ('Fernanda','Pineda','Perez','Fernanda','Pineda');
