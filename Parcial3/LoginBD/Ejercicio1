@@ -5,7 +5,7 @@ use rafaelgar;
 
 create table usuarios
 (
-idUsuario smallint not null identity(1,1),
+idUsuario smallint not null auto_increment,
   nombre    varchar(30),
   apPaterno varchar(30),
   apMaterno varchar(30),
@@ -13,7 +13,8 @@ idUsuario smallint not null identity(1,1),
   password  varchar(32),
   PRIMARY KEY(idUsuario)
 
-)
+);
+
 insert into usuarios(nombre,apPaterno,apMaterno,login,password)
 values ('Rafael','Garcia','Villanueva','Rafael','Garcia');
 
@@ -22,3 +23,5 @@ values ('Adolfo','Perez','Gutierrez','Adolfo','Perez');
 
 insert into usuarios (nombre,apPaterno,apMaterno,login,password)
 values ('Fernanda','Pineda','Perez','Fernanda','Pineda');
+
+select * from usuarios;
