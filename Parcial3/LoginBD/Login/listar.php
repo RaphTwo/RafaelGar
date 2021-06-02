@@ -41,19 +41,20 @@ $sql="SELECT * FROM usuarios";
 $result=mysqli_query($conn,$sql);
 
 while($mostrar=mysqli_fetch_array($result))
-{
+echo'
 	
-?>
+
 
 <tr> 
-	<td><?php echo $mostrar['idUsuario'] ?>
-	<td><?php echo $mostrar['nombre'] ?>
-	<td><?php echo $mostrar['apPaterno'] ?>
-	<td><?php echo $mostrar['apMaterno'] ?>
-	<td><?php echo $mostrar['login'] ?>
-</tr>
-<?php
-}
+	<td>', $mostrar['idUsuario'], 
+	'<td>', $mostrar['nombre'], 
+	'<td>', $mostrar['apPaterno'], 
+	'<td>', $mostrar['apMaterno'],
+	'<td>', $mostrar['login'], 
+	
+'</tr>
+
+'
 ?>
 <form method="POST">
 <tr><td colspan='5' align="center"><input type="submit" value="Cerrar sesión" name="btncerrar" /></td></tr>

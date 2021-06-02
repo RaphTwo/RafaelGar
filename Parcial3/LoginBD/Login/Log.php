@@ -11,7 +11,8 @@ if(isset($_POST['btningresar']))
 {
 	
 $nombre = $_POST["txtusuario"];
-$pass = $_POST["txtpassword"];
+$pass =md5($_POST["txtpassword"]);
+
 
 
 	
