@@ -63,7 +63,20 @@ body {
   border: solid;
   
   }
+  input[type=submit].registrar
+  {
+	font-size: 16px;
   
+  background-color: #9e9ae0;
+  color:black;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+  border: solid;
+  
+  }
+
   a
   {
 	  font-size: 14px;
