@@ -13,10 +13,13 @@
             <tr><td><input type="text" placeholder="Nombre"name="Nombre"></td></tr>
             <tr><td><input type="text" placeholder="Apellido Paterno"name="ApPaterno"></td></tr>
             <tr><td><input type="text" placeholder="Apellido Materno"name="ApMaterno"></td></tr>
-            <tr><td><input type="text" placeholder="&#128273;Usuario"name="txtusuario"></td></tr>
-            <tr><td><input type="text" placeholder="&#128274;Usuario"name="txtpassword"></td></tr>
+            <tr><td><input type="text" placeholder="&#128273;Usuario"name="txusuario"></td></tr>
+            <tr><td><input type="text" placeholder="&#128274;Usuario"name="txpassword"></td></tr>
             <form action="insertar.php" method="post">
-            <tr align="center"><td><input type="submit" value="registrar" name="btnregistrar2" ></td></tr></form>
+                <tr><td>
+                    <input type="submit" value="Registrarse" name="btnregistro">
+                </td></tr>
+            </form>
             </div>
 
         </table>

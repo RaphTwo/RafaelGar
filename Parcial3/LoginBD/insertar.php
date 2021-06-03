@@ -1,30 +1,47 @@
 <?php
-include('conexion.php')
-session_start();
-if(isset($_POST['btningresar2']))
-{
-    $queryVerificar = "SELECT * FROM USUARIO WHERE user = '$usuario'";
+include("conexion.php");
+
+$USUARIO=$_POST["txusuario"];
+$PASSWORD=$_POST["txpassword"];
+$PASSWORD=md5($PASSWORD);
+$PATERNO=$_POST["ApPaterno"];
+$MATERNO=$_POST["ApMaterno"];
+
+$query = "INSERT INTO usuarios (nombre, apPaterno,apMaterno,login,password ) VALUES('$USUARIO', '$PATERNO','$MATERNO','$USUARIO','$PASSWORD')";
+
+$queryVerificar = "SELECT * FROM usuarios WHERE login = '$usuario'";
     $ejecutarVerificacion = $conexion->prepare($queryVerificar);
     $ejecutarVerificacion->execute();
-    if($ejecutarVerificacion)
-    {
-$nombre = $_POST['Nombre'];
-$ApPaterno = $_POST['ApPaterno'];
-    $ApMaterno = $_POST['ApMaterno'];
-    $Usuario = $_POST['txtusuerio'];
-    $Contra = $_POST['txtpassword'];
 
+    if($ejecutarVerificacion->rowCount() > 0){
+        echo '
+            <script>
+                alert("Este usuario ya está registrado");
+                window.location = "registro.php";
+            </script>
+            ';
+    }else{
 
-    $queryInsertar = "INSERT INTO usuarios (nombre, appaterno, apmaterno, login, password) 
-                                        VALUES('$nombre', '$nombre', '$ApPaterno', '$ApMaterno', '$Usuario', '$Contra')";
-    $ejecutarInsertar = $conexion->prepare($queryInsertar);
-    $ejecutarInsertar->execute();
-
-    if ($ejecutarInsertar) {
-        $_SESSION['nombredelusuario']=$nombre;
-        header("Location: listar.php");
-
-    } 
-}
-}
+        $ejecutarQuery = $conexion->prepare($query);
+        $ejecutarQuery->execute();
+    
+        if($ejecutarQuery){
+            echo '
+            <script>
+                alert("Usuario almacenado con exito!");
+                window.location = "registro.php";
+            </script>
+            ';
+            header("Location: index.php")
+        }else{
+            echo '
+            <script>
+                alert("Usuario NO almacenado, inténtelo de nuevo");
+                window.location = "registro.php";
+            </script>
+            ';
+        }
+        
+        $conexion=null;
+    }
 ?>
