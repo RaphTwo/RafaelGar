@@ -23,11 +23,11 @@ body {
   
   td
   {
-		border-color:dimgray;
+		border-color:rgb(66, 65, 65);
 	  padding: 10px 30px;
   }
   tr{
-    border-color:dimgray;
+    border-color:rgb(58, 57, 57);
   }
   
   input[type=text], input[type=password]
@@ -94,6 +94,16 @@ body {
   }
   td{
 color: aliceblue;
+  }
+  input[type=submit]#btnregresar
+  {
+    color: rgb(9, 5, 5);
+  width: 40%;
+  font-size: 16px;
+  border:black;
+  box-sizing: border-box;
+  border-bottom: 2px solid black;
+  background: transparent;
   }
   
   
